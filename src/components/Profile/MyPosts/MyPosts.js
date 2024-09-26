@@ -1,0 +1,19 @@
+import {Post} from "./Post/Post";
+import classes from './MyPosts.module.css'
+
+export const MyPosts = (props) => {
+  let postsElements = props.data.map(p => <Post text={p.text} count={p.likesCount}/>)
+
+  return (
+    <div className={classes.postsBlock}>
+      <h3>My Posts</h3>
+      <div>
+        <div><textarea></textarea></div>
+        <button>ADD post</button>
+      </div>
+      <div className={classes.posts}>
+        {postsElements}
+      </div>
+    </div>
+  );
+}

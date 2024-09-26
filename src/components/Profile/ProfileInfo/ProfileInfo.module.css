@@ -1,0 +1,16 @@
+.descBlock{
+    padding: 10px;
+}
+
+.pict img{
+
+    height: 350px;
+
+}
+
+.pict{
+    display: flex;
+    align-items: center;
+
+
+}
