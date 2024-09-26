@@ -36,13 +36,15 @@ export let state = {
       {id: 6, message: "Спасибо, да что то выходит)"},
       {id: 7, message: "Молодец, скинь результат."}
     ],
+    newMessageText: ''
   },
   profilePage: {
     posts: [
       {id: 1, text: 'hello', likesCount: 45},
       {id: 2, text: 'good', likesCount: 47},
       {id: 3, text: 'word', likesCount: 40},
-    ]
+    ],
+    newPostText: ''
   },
   sideBar: {
     friends: [
@@ -66,13 +68,35 @@ export let state = {
 
 }
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
   let newPost = {
     id: 5,
-    text: postMessage,
+    text: state.profilePage.newPostText,
     likesCount: 0
   };
 
-  state.profilePage.posts.push(newPost)
-rerenderEntireTree(state)
+  state.profilePage.posts.push(newPost);
+  state.profilePage.newPostText = ''
+  rerenderEntireTree(state)
 }
+
+export let updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
+  rerenderEntireTree(state)
+}
+
+export let addMessage = () => {
+  let newMessage = {
+    id: 8, message: state.dialogsPage.newMessageText
+  };
+
+  state.dialogsPage.messages.push(newMessage);
+  state.dialogsPage.newMessageText = ''
+  rerenderEntireTree(state)
+}
+
+export let updateNewMessageText = (newMessage) => {
+  state.dialogsPage.newMessageText = newMessage;
+  rerenderEntireTree(state)
+}
+
