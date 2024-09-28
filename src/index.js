@@ -6,17 +6,17 @@ import React from "react";
 import {BrowserRouter} from "react-router-dom";
 import {App} from "./App";
 const root = ReactDOM.createRoot(document.getElementById('root'));
-export let rerenderEntireTree = ()=>{
+export let rerenderEntireTree = (state)=>{
   root.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App state={store.state} store={store}/>
+        <App state={state} store={store}/>
       </BrowserRouter>
     </React.StrictMode>
   );
 
 }
-rerenderEntireTree()
+rerenderEntireTree(store.getState())
 store.subscribe(rerenderEntireTree)
 
 

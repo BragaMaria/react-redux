@@ -1,6 +1,5 @@
-
 export let store = {
-  state:{
+  _state: {
     dialogsPage: {
       dialogs: [
         {
@@ -67,41 +66,44 @@ export let store = {
     }
 
   },
-  rerenderEntireTree(){
+  getState(){
+    return this._state
+  },
+  _callSubscriber() {
     console.log("State changed")
   },
-  addPost(){
+  addPost() {
     let newPost = {
       id: 5,
-      text: this.state.profilePage.newPostText,
+      text: this._state.profilePage.newPostText,
       likesCount: 0
     };
 
-    this.state.profilePage.posts.push(newPost);
-    this.state.profilePage.newPostText = '';
-    this.rerenderEntireTree();
+    this._state.profilePage.posts.push(newPost);
+    this._state.profilePage.newPostText = '';
+    this._callSubscriber(this.getState());
 
   },
-  updateNewPostText(newText){
-    this.state.profilePage.newPostText = newText;
-    this.rerenderEntireTree()
+  updateNewPostText(newText) {
+    this._state.profilePage.newPostText = newText;
+    this._callSubscriber(this.getState())
   },
-  addMessage(){
+  addMessage() {
     let newMessage = {
-      id: 8, message: this.state.dialogsPage.newMessageText
+      id: 8, message: this._state.dialogsPage.newMessageText
     };
 
-    this.state.dialogsPage.messages.push(newMessage);
-    this.state.dialogsPage.newMessageText = ''
-    this.rerenderEntireTree()
+    this._state.dialogsPage.messages.push(newMessage);
+    this._state.dialogsPage.newMessageText = ''
+    this._callSubscriber(this.getState())
   },
-  updateNewMessageText(newMessage){
-    this.state.dialogsPage.newMessageText = newMessage;
-    this.rerenderEntireTree()
+  updateNewMessageText(newMessage) {
+    this._state.dialogsPage.newMessageText = newMessage;
+    this._callSubscriber(this.getState())
   },
-  subscribe(observer){
-    this.rerenderEntireTree = observer
+  subscribe(observer) {
+    this._callSubscriber = observer
   }
 }
 
-window.state = store.state
+window.state = store._state
