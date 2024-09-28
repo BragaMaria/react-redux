@@ -19,11 +19,10 @@ export const App = (props) => {
 
         <Routes>
           <Route path="/dialogs/*" element={<Dialogs state={props.state.dialogsPage}
-                                                     addMessage={props.addMessage}
+                                                     store={props.store}
                                                      newMessageText={props.state.dialogsPage.newMessageText}
-                                                     updateNewMessageText={props.updateNewMessageText}/>}/>
-          <Route path="/profile" element={<Content profilePage={props.state.profilePage} addPost={props.addPost}
-                                                   updateNewPostText={props.updateNewPostText}/>}/>
+                                                     />}/>
+          <Route path="/profile" element={<Content profilePage={props.state.profilePage} store={props.store}/>}/>
           <Route path='/news' element={<News/>}/>
           <Route path='/music' element={<Music/>}/>
           <Route path='/settings' element={<Settings/>}/>
