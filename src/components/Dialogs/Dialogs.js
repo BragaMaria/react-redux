@@ -11,12 +11,12 @@ export const Dialogs = (props) => {
 
   let newMessageElement = React.createRef();
   let addMessage = () => {
-    props.store.addMessage()
+    props.store.dispatch({type:'ADD-MESSAGE'})
   }
 
   let updateMessage = () => {
     let text = newMessageElement.current.value;
-    props.store.updateNewMessageText(text)
+    props.store.dispatch({type:'UPDATE-NEW-MESSAGE-TEXT', newMessage:text})
   }
 
   return (
