@@ -1,3 +1,5 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 export let store = {
   _state: {
     dialogsPage: {
@@ -76,7 +78,6 @@ export let store = {
   subscribe(observer) {
     this._callSubscriber = observer
   },
-
   dispatch(action) {
     if (action.type === 'ADD-POST') {
       let newPost = {
@@ -104,8 +105,9 @@ export let store = {
       this._callSubscriber(this.getState())
     }
   }
-
-}
+};
+export const addPostActionCreator = () => ({type: ADD_POST});
+export const updateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text});
 
 
 window.state = store._state
