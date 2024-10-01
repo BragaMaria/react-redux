@@ -10,6 +10,7 @@ import {Settings} from "./components/Settings/Settings";
 
 
 export const App = (props) => {
+  debugger;
   return (
     <div className='app-wrapper'>
       <Header/>
