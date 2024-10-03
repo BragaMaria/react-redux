@@ -5,22 +5,26 @@ import ReactDOM from "react-dom/client";
 import React from "react";
 import {BrowserRouter} from "react-router-dom";
 import {App} from "./App";
+import {Provider} from "./StoreContext";
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
-export let rerenderEntireTree = (state)=>{
-  debugger;
+export let rerenderEntireTree = () => {
   root.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App state={state} store={store}/>
+        <Provider store={store}>
+
+          <App />
+          {/*<App state={state} store={store}/>*/}
+        </Provider>
       </BrowserRouter>
     </React.StrictMode>
   );
 
 }
-rerenderEntireTree(store.getState())
-store.subscribe(()=>{
-  let state = store.getState()
-  rerenderEntireTree(state)
+rerenderEntireTree()
+store.subscribe(() => {
+  rerenderEntireTree()
 })
 
 
