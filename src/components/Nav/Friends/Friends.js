@@ -2,7 +2,7 @@ import classes from "../NavBar.module.css";
 import {Friend} from "./Friend/Friend";
 
 export const Friends = (props) => {
-  let friendsElements = props.state.friends.map(f => <Friend avaPath={f.avaPath} name={f.name}/>)
+  let friendsElements = props.friends.map(f => <Friend avaPath={f.avaPath} name={f.name}/>)
 
   return (
     <div className={classes.sideBar}>
