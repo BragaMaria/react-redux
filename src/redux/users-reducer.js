@@ -2,11 +2,11 @@ let FOLLOW = 'FOLLOW';
 let UNFOLLOW = 'UNFOLLOW';
 let SET_USERS = 'SET_USERS';
 
+let initialState = { users:[]}
 
 
 
-export const usersReducer = (state = [], action) => {
-  debugger
+export const usersReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_USERS:{
       return {

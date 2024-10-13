@@ -4,6 +4,7 @@ import {followAC, setUserAC, unfollowAC} from "../../redux/users-reducer";
 
 
 let mstp = (state) => {
+
   return {
     users: state.usersPage.users
   }
