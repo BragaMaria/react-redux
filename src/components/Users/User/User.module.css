@@ -1,0 +1,22 @@
+.avaImg{
+    width: 50px;
+    border-radius: 50%;
+}
+
+.userBlock{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.userAction{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.userLocation{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

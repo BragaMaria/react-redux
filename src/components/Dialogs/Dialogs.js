@@ -7,8 +7,8 @@ import React from 'react'
 export const Dialogs = (props) => {
   const {dialogs, messages} = {...props.state}
 
-  let dialogsElements = dialogs.map(d => <DialogItem name={d.name} id={d.id} avaPath={d.avaPath}/>);
-  let messagesElements = messages.map(m => <Message message={m.message}/>);
+  let dialogsElements = dialogs.map(d => <DialogItem name={d.name} id={d.id} avaPath={d.avaPath} key={d.id}/>);
+  let messagesElements = messages.map(m => <Message message={m.message} key={m.id}/>);
 
   let newMessageElement = React.createRef();
   let addMessage = () => {
