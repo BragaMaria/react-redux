@@ -7,15 +7,38 @@ import React from "react";
 export class Users extends React.Component {
   componentDidMount() {
     axios
-      .get('https://social-network.samuraijs.com/api/1.0/users')
+      .get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
       .then(data => {
-        debugger
         this.props.setUsers(data.data.items)
+        this.props.setTotalUsersCount(data.data.totalCount)
       })
+
   }
 
+  onPageChanged(p){
+    this.props.setCurrentPage(p)
+    axios
+      .get(`https://social-network.samuraijs.com/api/1.0/users?page=${p}&count=${this.props.pageSize}`)
+      .then(data => {
+        this.props.setUsers(data.data.items)
+      })
+}
+
   render = () => {
+    let pagesCount =  Math.ceil(this.props.totalUsersCount / this.props.pageSize) ;
+    let pages = []
+    for(let i=1; i<=pagesCount; i++){
+      if (pages.length < 20) {
+        pages.push(i);
+      }
+    }
+
     return <div>
+      <div>
+        {pages.map(p=> <span
+          className={this.props.currentPage===p && classes.selectedPage}
+          onClick={()=>{this.onPageChanged(p)}}>{p}</span>)}
+      </div>
       {this.props.users.map((u) =>
 
         <div className={classes.userBlock}>

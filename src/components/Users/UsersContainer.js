@@ -1,12 +1,15 @@
 import {connect} from "react-redux";
 import {Users} from "./UsersC";
-import {followAC, setUserAC, unfollowAC} from "../../redux/users-reducer";
+import {followAC, setCurrentPageAC, setTotalUsersCountAC, setUserAC, unfollowAC} from "../../redux/users-reducer";
 
 
 let mstp = (state) => {
 
   return {
-    users: state.usersPage.users
+    users: state.usersPage.users,
+    pageSize: state.usersPage.pageSize,
+    totalUsersCount: state.usersPage.totalUsersCount,
+    currentPage:state.usersPage.currentPage
   }
 }
 
@@ -20,6 +23,12 @@ let mdtp = (dispatch) => {
     },
     setUsers: (users) => {
       dispatch(setUserAC(users))
+    },
+    setCurrentPage:(pageNumber)=>{
+      dispatch(setCurrentPageAC(pageNumber))
+    },
+    setTotalUsersCount:(totalCount)=>{
+      dispatch(setTotalUsersCountAC(totalCount))
     }
   }
 }
