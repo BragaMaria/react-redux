@@ -3,8 +3,9 @@ let UNFOLLOW = 'UNFOLLOW';
 let SET_USERS = 'SET_USERS';
 let SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 let SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
+let TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 
-let initialState = { users:[],currentPage:1, totalUsersCount:0, pageSize:4}
+let initialState = { users:[],currentPage:1, totalUsersCount:0, pageSize:4, isFetching: false}
 
 
 
@@ -28,8 +29,6 @@ export const usersReducer = (state = initialState, action) => {
       }
     }
     case FOLLOW:
-      console.log("Follow",action.userId)
-
       return {
         ...state,
         users:state.users.map(u  => {
@@ -41,7 +40,6 @@ export const usersReducer = (state = initialState, action) => {
       }
 
     case UNFOLLOW:
-      console.log("UnFollow",action.userId)
       return {
         ...state,
         users: state.users.map((u) => {
@@ -50,6 +48,12 @@ export const usersReducer = (state = initialState, action) => {
           }
           return u
         }),
+      }
+
+    case TOGGLE_IS_FETCHING:
+      return {
+        ...state,
+        isFetching:  action.isFetching
       }
     default:
       return state
@@ -72,4 +76,9 @@ export const setCurrentPageAC = (currentPage) => ({
 export const setTotalUsersCountAC = (totalCount) => ({
   type: SET_TOTAL_USERS_COUNT,
   totalCount
+})
+
+export const isFetchingAC = (isFetching) =>({
+  type:TOGGLE_IS_FETCHING,
+  isFetching
 })
