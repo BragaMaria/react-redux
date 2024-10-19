@@ -4,7 +4,7 @@ let SET_USERS = 'SET_USERS';
 let SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 let SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
 
-let initialState = { users:[],currentPage:3, totalUsersCount:0, pageSize:4}
+let initialState = { users:[],currentPage:1, totalUsersCount:0, pageSize:4}
 
 
 
