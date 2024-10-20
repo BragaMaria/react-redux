@@ -1,11 +1,11 @@
 import {connect} from "react-redux";
 import {
-  followAC,
-  isFetchingAC,
-  setCurrentPageAC,
-  setTotalUsersCountAC,
-  setUserAC,
-  unfollowAC
+  followUser,
+  toggleIsFetching,
+  setCurrentPage,
+  setTotalUsersCount,
+  setUsers,
+  unFollow
 } from "../../redux/users-reducer";
 import React from "react";
 import axios from "axios";
@@ -32,9 +32,10 @@ export class UsersAPIComponent extends React.Component {
     axios
       .get(`https://social-network.samuraijs.com/api/1.0/users?page=${p}&count=${this.props.pageSize}`)
       .then(data => {
-        this.props.toggleIsFetching(false)
         this.props.setUsers(data.data.items)
+        this.props.toggleIsFetching(false)
       })
+
   }
 
   render = () => {
@@ -66,27 +67,29 @@ let mstp = (state) => {
   }
 }
 
-let mdtp = (dispatch) => {
-  return {
-    followUser: (userId) => {
-      dispatch(followAC(userId))
-    },
-    unFollow: (userId) => {
-      dispatch(unfollowAC(userId))
-    },
-    setUsers: (users) => {
-      dispatch(setUserAC(users))
-    },
-    setCurrentPage: (pageNumber) => {
-      dispatch(setCurrentPageAC(pageNumber))
-    },
-    setTotalUsersCount: (totalCount) => {
-      dispatch(setTotalUsersCountAC(totalCount))
-    },
-    toggleIsFetching: (isFetching) => {
-      dispatch(isFetchingAC(isFetching))
-    }
-  }
-}
-export const UsersContainer = connect(mstp, mdtp)(UsersAPIComponent)
+// let mdtp = (dispatch) => {
+//   return {
+//     followUser: (userId) => {
+//       dispatch(followAC(userId))
+//     },
+//     unFollow: (userId) => {
+//       dispatch(unfollowAC(userId))
+//     },
+//     setUsers: (users) => {
+//       dispatch(setUserAC(users))
+//     },
+//     setCurrentPage: (pageNumber) => {
+//       dispatch(setCurrentPageAC(pageNumber))
+//     },
+//     setTotalUsersCount: (totalCount) => {
+//       dispatch(setTotalUsersCountAC(totalCount))
+//     },
+//     toggleIsFetching: (isFetching) => {
+//       dispatch(isFetchingAC(isFetching))
+//     }
+//   }
+// }
+export const UsersContainer =
+  connect(mstp, {followUser, unFollow, setUsers, setCurrentPage, setTotalUsersCount, toggleIsFetching})
+(UsersAPIComponent)
 
