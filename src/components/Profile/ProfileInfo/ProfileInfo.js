@@ -1,6 +1,10 @@
 import classes from './ProfileInfo.module.css'
+import {Preloader} from "../../common/Preloader/Preloader";
 
-export const ProfileInfo = () => {
+export const ProfileInfo = (props) => {
+  if(!props.profile){
+    return <Preloader/>
+  }
   return (
     <div>
     <div className={classes.pict}>
@@ -9,6 +13,7 @@ export const ProfileInfo = () => {
 
       <div className={classes.descBlock}>
         ava + desc
+        Name:{props.profile.fullName}
       </div>
     </div>
   );
