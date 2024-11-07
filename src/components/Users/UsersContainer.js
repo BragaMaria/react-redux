@@ -17,7 +17,10 @@ export class UsersAPIComponent extends React.Component {
   componentDidMount() {
     this.props.toggleIsFetching(true)
     axios
-      .get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
+      .get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`,
+        {
+          withCredentials:true
+        })
       .then(data => {
         this.props.toggleIsFetching(false)
         this.props.setUsers(data.data.items)
@@ -30,7 +33,11 @@ export class UsersAPIComponent extends React.Component {
     this.props.setCurrentPage(p)
     this.props.toggleIsFetching(true)
     axios
-      .get(`https://social-network.samuraijs.com/api/1.0/users?page=${p}&count=${this.props.pageSize}`)
+      .get(`https://social-network.samuraijs.com/api/1.0/users?page=${p}&count=${this.props.pageSize}`,
+        {
+          withCredentials:true
+        }
+        )
       .then(data => {
         this.props.setUsers(data.data.items)
         this.props.toggleIsFetching(false)
@@ -67,28 +74,7 @@ let mstp = (state) => {
   }
 }
 
-// let mdtp = (dispatch) => {
-//   return {
-//     followUser: (userId) => {
-//       dispatch(followAC(userId))
-//     },
-//     unFollow: (userId) => {
-//       dispatch(unfollowAC(userId))
-//     },
-//     setUsers: (users) => {
-//       dispatch(setUserAC(users))
-//     },
-//     setCurrentPage: (pageNumber) => {
-//       dispatch(setCurrentPageAC(pageNumber))
-//     },
-//     setTotalUsersCount: (totalCount) => {
-//       dispatch(setTotalUsersCountAC(totalCount))
-//     },
-//     toggleIsFetching: (isFetching) => {
-//       dispatch(isFetchingAC(isFetching))
-//     }
-//   }
-// }
+
 export const UsersContainer =
   connect(mstp, {followUser, unFollow, setUsers, setCurrentPage, setTotalUsersCount, toggleIsFetching})
 (UsersAPIComponent)
