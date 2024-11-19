@@ -1,7 +1,6 @@
 import classes from "./User/User.module.css";
 import userImg from "../../assets/images/user.jpg";
 import {NavLink} from "react-router-dom";
-import {usersAPI} from "../../api/api";
 
 
 export const Users = (props) => {
@@ -32,23 +31,16 @@ export const Users = (props) => {
               <img src={u.photos.small !== null ? u.photos.small : userImg} alt='Img' className={classes.avaImg}/>
             </NavLink>
             {u.followed
-              ? <button onClick={() => {
-                usersAPI.unFollowUserRequest(u.id).then(data => {
-                  if (data.resultCode === 0) {
-                    props.unFollow(u.id)
-                  }
-                })
-              }}>UNFOLLOW</button>
-
-              : <button onClick={() => {
-                usersAPI.followUserRequest(u.id)
-                  .then(data => {
-                    if (data.resultCode === 0) {
-                      props.followUser(u.id)
-                    }
-                  })
-              }
-              }>FOLLOW</button>
+              ? <button
+                disabled={props.isFollowingProgress.some(id => id === u.id)}
+                onClick={() => {
+                  props.unFollow(u.id)
+                }}>UNFOLLOW</button>
+              : <button
+                disabled={props.isFollowingProgress.some(id => id === u.id)}
+                onClick={() => {
+                  props.follow(u.id)
+                }}>FOLLOW</button>
             }
           </div>
 
@@ -58,8 +50,7 @@ export const Users = (props) => {
           </div>
 
           <div className={classes.userLocation}>
-            <div>{u.city}</div>
-            <div>{u.country}</div>
+
           </div>
         </div>
       )}
