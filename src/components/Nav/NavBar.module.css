@@ -1,0 +1,35 @@
+.nav {
+    grid-area: n;
+    background-color: #6b6bae;
+    padding: 10px;
+
+}
+
+.navBar{
+    margin-bottom: 50px;
+}
+
+.sideBar h3{
+    color: white;
+    margin: 0 0 5px;
+}
+.sideBarFriends{
+    display: flex;
+    gap: 10px;
+}
+
+
+
+
+
+.item {
+    color: white;
+}
+
+.item a {
+    color: white
+}
+
+.item a.activeLink {
+    color: gold
+}

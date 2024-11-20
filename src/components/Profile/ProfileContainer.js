@@ -1,7 +1,7 @@
 import React from "react";
 import {Content} from "./Content";
 import {connect} from "react-redux";
-import {setProfile, setUserProfile} from "../../redux/profile-reducer";
+import {getProfile, setUserProfile} from "../../redux/profile-reducer";
 import {useLocation, useParams} from 'react-router-dom';
 
 export function withRouter(ProfileContainer) {
@@ -15,7 +15,7 @@ export function withRouter(ProfileContainer) {
 class ProfileContainer extends React.Component {
   componentDidMount = () => {
     let userId = this.props.match.params.userId
-    this.props.setProfile(userId)
+    this.props.getProfile(userId)
   }
 
   render = () => (
@@ -30,6 +30,6 @@ let mstp = (state) => ({
 })
 
 export default connect(mstp, {
-  setUserProfile, setProfile
+  setUserProfile, getProfile
 })(withRouter(ProfileContainer))
 

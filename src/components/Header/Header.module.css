@@ -1,0 +1,25 @@
+.header {
+  grid-area: h;
+  background-color: #515365;
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerLogo{
+  min-height: 70px;
+  min-width: 70px;
+  height: 70px;
+  width: 70px;
+  background-color: #ff5e3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginBlock{
+  margin: 20px;
+}
+
+.loginBlock a{
+  color: white;
+}

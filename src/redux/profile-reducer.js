@@ -50,7 +50,7 @@ export const updateNewPostText = (text) => ({type: UPDATE_NEW_POST_TEXT, newText
 
 export const setUserProfile = (profile)=>({type:SET_USER_PROFILE, profile})
 
-export const setProfile = (userId)=>{
+export const getProfile = (userId)=>{
   return (dispatch)=>{
     usersAPI.userProfileRequest(userId)
       .then((data)=>{
