@@ -1,7 +1,8 @@
 import classes from './Dialogs.module.css'
 import {DialogItem} from "./DialogItem/DialogItem";
 import {Message} from "./Message/Message";
-import React from 'react'
+import React, {useEffect} from 'react'
+import {useNavigate} from "react-router-dom";
 
 
 export const Dialogs = (props) => {
@@ -20,6 +21,15 @@ export const Dialogs = (props) => {
     props.updateNewMessageText(text)
 
   }
+
+  let navigate = useNavigate()
+  useEffect(() => {
+    if (!props.isAuth) {
+      return navigate("/login")
+    }
+  })
+
+
 
   return (
     <div className={classes.dialogs}>
