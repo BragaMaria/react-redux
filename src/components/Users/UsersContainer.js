@@ -5,6 +5,7 @@ import {
 import React from "react";
 import {Users} from "./Users";
 import {Preloader} from "../common/Preloader/Preloader";
+import {WithAuthRedirect} from "../../hoc/WithAuthRedirect";
 
 
 export class UsersAPIComponent extends React.Component {
@@ -36,6 +37,8 @@ export class UsersAPIComponent extends React.Component {
 
 }
 
+let authRedirect = WithAuthRedirect(UsersAPIComponent)
+
 let mstp = (state) => {
   return {
     users: state.usersPage.users,
@@ -55,5 +58,5 @@ export const UsersContainer =
     getUsers,
     setCurrentPage
   })
-  (UsersAPIComponent)
+  (authRedirect)
 
