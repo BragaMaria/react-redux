@@ -6,6 +6,7 @@ import React from "react";
 import {Users} from "./Users";
 import {Preloader} from "../common/Preloader/Preloader";
 import {WithAuthRedirect} from "../../hoc/WithAuthRedirect";
+import {compose} from "redux";
 
 
 export class UsersAPIComponent extends React.Component {
@@ -37,8 +38,6 @@ export class UsersAPIComponent extends React.Component {
 
 }
 
-let authRedirect = WithAuthRedirect(UsersAPIComponent)
-
 let mstp = (state) => {
   return {
     users: state.usersPage.users,
@@ -51,12 +50,15 @@ let mstp = (state) => {
 }
 
 
-export const UsersContainer =
+
+
+export default compose(
   connect(mstp, {
     follow,
     unFollow,
     getUsers,
     setCurrentPage
-  })
-  (authRedirect)
+  }),
+    WithAuthRedirect
+)(UsersAPIComponent)
 
