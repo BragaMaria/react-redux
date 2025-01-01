@@ -1,5 +1,6 @@
 import classes from './ProfileInfo.module.css'
 import {Preloader} from "../../common/Preloader/Preloader";
+import {ProfileStatus} from './ProfileStatus'
 
 export const ProfileInfo = (props) => {
   if(!props.profile){
@@ -12,8 +13,9 @@ export const ProfileInfo = (props) => {
     </div>
 
       <div className={classes.descBlock}>
-        ava + desc
         Name:{props.profile.fullName}
+
+        <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
       </div>
     </div>
   );
