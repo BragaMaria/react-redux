@@ -21,11 +21,11 @@ export const usersAPI = {
       .post(`follow/${userId}`, {}).then(response=>response.data)
   },
   loginUserRequest (){
-    console.warn('Obsolete method. Please use authAPI object')
+    // console.warn('Obsolete method. Please use authAPI object')
     return authAPI.me()
   },
   userProfileRequest(userId){
-    console.warn('Obsolete method. Please use profileAPI object')
+    // console.warn('Obsolete method. Please use profileAPI object')
     return profileAPI.userProfileRequest(userId)
   }
 }

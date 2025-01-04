@@ -1,4 +1,4 @@
-import {addMessage, updateNewMessageText} from "../../redux/dialogs-reducer";
+import {addMessage} from "../../redux/dialogs-reducer";
 import {Dialogs} from "./Dialogs";
 import {connect} from "react-redux";
 import {WithAuthRedirect} from "../../hoc/WithAuthRedirect";
@@ -16,7 +16,6 @@ export default compose(
   connect(mapStateToProps,
     {
       addMessage: addMessage,
-      updateNewMessageText: updateNewMessageText,
     }),
   WithAuthRedirect
 )(Dialogs)
