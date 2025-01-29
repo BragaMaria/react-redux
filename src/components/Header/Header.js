@@ -2,7 +2,7 @@ import classes from './Header.module.css';
 import {NavLink} from "react-router-dom";
 
 export const Header = (props) => {
-  debugger
+
   return (
     <header className={classes.header}>
       <div className={classes.headerLogo}>

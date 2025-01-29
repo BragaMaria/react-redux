@@ -3,23 +3,25 @@ import {Input} from "../common/FormsControls/FormsControls";
 import {maxLengthCreator, required} from "../../utils/validators/validators";
 import {connect} from "react-redux";
 import {login, logout} from "../../redux/auth-reducer";
-import {NavLink, useNavigate} from "react-router-dom";
-import {useEffect} from "react";
+import classes from "../common/FormsControls/FormsControls.module.css";
 
 
 const LoginForm = (props) => {
   return (
-
     <form onSubmit={props.handleSubmit(props.showData)}>
       <div>
-        <Field placeholder='Email' name={'email'} component={Input} validate={[required, maxLengthCreator(50)]}/>
+        <Field placeholder='Email' name={'email'} component={Input} validate={[required]}/>
       </div>
       <div>
         <Field placeholder='Password' name={'password'} type={'password'} component={Input}
                validate={[required, maxLengthCreator(50)]}/>
       </div>
-      <div>
-        <Field type='checkbox' name={'rememberMe'} component={Input}/> remember me
+      <div className={classes.flexBlock}>
+        <Field type='checkbox' name={'rememberMe'} component={Input}/>
+        remember me
+      </div>
+      <div className={classes.formSummaryError}>
+        {props.error}
       </div>
       <div>
         <button type={"submit"}>Login</button>
