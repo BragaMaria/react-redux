@@ -8,12 +8,11 @@ import {Preloader} from "../common/Preloader/Preloader";
 import {WithAuthRedirect} from "../../hoc/WithAuthRedirect";
 import {compose} from "redux";
 import {
-  getUsersSelect,
   getCurrentPage,
   getIsFetching,
   getIsFollowingProgress,
   getPageSize,
-  getTotalUsersCount
+  getTotalUsersCount, getUsersSelector,
 } from "../../redux/users-selectors";
 
 
@@ -46,20 +45,9 @@ export class UsersAPIComponent extends React.Component {
 
 }
 
-// let mstp = (state) => {
-//   return {
-//     users: state.usersPage.users,
-//     pageSize: state.usersPage.pageSize,
-//     totalUsersCount: state.usersPage.totalUsersCount,
-//     currentPage: state.usersPage.currentPage,
-//     isFetching: state.usersPage.isFetching,
-//     isFollowingProgress: state.usersPage.isFollowingProgress
-//   }
-// }
-
 let mstp = (state) => {
   return {
-    users: getUsersSelect(state),
+    users: getUsersSelector(state),
     pageSize: getPageSize(state),
     totalUsersCount: getTotalUsersCount(state),
     currentPage: getCurrentPage(state),
