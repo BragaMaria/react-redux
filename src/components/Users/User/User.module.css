@@ -7,6 +7,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+}
+
+.userFlexColumn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 .userAction{
@@ -20,8 +28,3 @@
     align-items: center;
     flex-direction: column;
 }
-
-.selectedPage{
-    font-weight: bold;
-}
-

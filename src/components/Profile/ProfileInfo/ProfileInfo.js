@@ -1,10 +1,9 @@
 import classes from './ProfileInfo.module.css'
 import {Preloader} from "../../common/Preloader/Preloader";
-import {ProfileStatus} from './ProfileStatus'
 import {ProfileStatusWithHooks} from "./ProfileStatusWithHooks";
 
-export const ProfileInfo = (props) => {
-  if(!props.profile){
+export const ProfileInfo = ({profile,status,updateStatus,...props}) => {
+  if(!profile){
     return <Preloader/>
   }
   return (
@@ -14,9 +13,9 @@ export const ProfileInfo = (props) => {
     </div>
 
       <div className={classes.descBlock}>
-        Name:{props.profile.fullName}
+        Name:{profile.fullName}
 
-        <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
+        <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
       </div>
     </div>
   );

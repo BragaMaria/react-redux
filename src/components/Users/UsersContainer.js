@@ -18,26 +18,29 @@ import {
 
 export class UsersAPIComponent extends React.Component {
   componentDidMount() {
-    this.props.getUsers(this.props.currentPage, this.props.pageSize)
+    let {getUsers, currentPage, pageSize} = this.props
+    getUsers(currentPage, pageSize)
   }
 
   onPageChanged = (p) => {
-    this.props.getUsers(p, this.props.pageSize)
+    let {getUsers, pageSize} = this.props
+    getUsers(p, pageSize)
   }
 
   render = () => {
+    let {isFetching, totalUsersCount, pageSize, currentPage, users, isFollowingProgress, follow, unFollow} = this.props
     return (
       <>
-        {this.props.isFetching ? <Preloader/> : null}
+        {isFetching ? <Preloader/> : null}
         <Users
-          totalUsersCount={this.props.totalUsersCount}
-          pageSize={this.props.pageSize}
-          currentPage={this.props.currentPage}
-          users={this.props.users}
+          totalUsersCount={totalUsersCount}
+          pageSize={pageSize}
+          currentPage={currentPage}
+          users={users}
           onPageChanged={this.onPageChanged}
-          isFollowingProgress={this.props.isFollowingProgress}
-          follow={this.props.follow}
-          unFollow={this.props.unFollow}
+          isFollowingProgress={isFollowingProgress}
+          follow={follow}
+          unFollow={unFollow}
         />
       </>)
   }

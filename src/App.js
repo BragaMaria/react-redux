@@ -10,11 +10,7 @@ import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
 import React from "react";
-
-
-
-export const App = (props) => {
-
+export const App = () => {
   return (
     <div className='app-wrapper'>
       <HeaderContainer/>
@@ -33,7 +29,6 @@ export const App = (props) => {
       </div>
     </div>
   );
-
 }
 
 
