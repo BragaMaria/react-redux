@@ -1,6 +1,6 @@
 import "./App.css";
 import {NavBar} from "./components/Nav/NavBar.js";
-import {Route, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {News} from "./components/News/News";
 import {Music} from "./components/Music/Music";
 import {Settings} from "./components/Settings/Settings";
@@ -10,6 +10,8 @@ import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
 import React from "react";
+import {Provider} from "react-redux";
+import store from "./redux/redux-store";
 export const App = () => {
   return (
     <div className='app-wrapper'>
@@ -31,6 +33,15 @@ export const App = () => {
   );
 }
 
+export let SamuraiJsApp = (props)=>{
+  return <React.StrictMode>
+      <BrowserRouter>
+        <Provider store={store}>
+          <App/>
+        </Provider>
+      </BrowserRouter>
+    </React.StrictMode>
+}
 
 
 
