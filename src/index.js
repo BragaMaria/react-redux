@@ -3,10 +3,7 @@ import reportWebVitals from './reportWebVitals';
 import store from "./redux/redux-store";
 import ReactDOM from "react-dom/client";
 import React from "react";
-
 import { SamuraiJsApp} from "./App";
-
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
