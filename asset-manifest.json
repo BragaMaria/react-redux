@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-redux/static/css/main.eb6d8b15.css",
-    "main.js": "/react-redux/static/js/main.fb19c359.js",
+    "main.js": "/react-redux/static/js/main.04739954.js",
     "static/js/453.68693753.chunk.js": "/react-redux/static/js/453.68693753.chunk.js",
     "static/css/819.ea26c885.chunk.css": "/react-redux/static/css/819.ea26c885.chunk.css",
     "static/js/819.9fa3ef60.chunk.js": "/react-redux/static/js/819.9fa3ef60.chunk.js",
@@ -16,7 +16,7 @@
     "static/media/preloader.svg": "/react-redux/static/media/preloader.cac5b4ea9b2a74d85c77eb7ecb6b83ac.svg",
     "index.html": "/react-redux/index.html",
     "main.eb6d8b15.css.map": "/react-redux/static/css/main.eb6d8b15.css.map",
-    "main.fb19c359.js.map": "/react-redux/static/js/main.fb19c359.js.map",
+    "main.04739954.js.map": "/react-redux/static/js/main.04739954.js.map",
     "453.68693753.chunk.js.map": "/react-redux/static/js/453.68693753.chunk.js.map",
     "819.ea26c885.chunk.css.map": "/react-redux/static/css/819.ea26c885.chunk.css.map",
     "819.9fa3ef60.chunk.js.map": "/react-redux/static/js/819.9fa3ef60.chunk.js.map",
@@ -30,6 +30,6 @@
   },
   "entrypoints": [
     "static/css/main.eb6d8b15.css",
-    "static/js/main.fb19c359.js"
+    "static/js/main.04739954.js"
   ]
 }
