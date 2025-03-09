@@ -2,15 +2,13 @@
     padding: 10px;
 }
 
-.pict img{
-
-    height: 350px;
-
-}
-
 .pict{
     display: flex;
     align-items: center;
+}
 
-
+.pictImg{
+    max-width: 200px;
+    height: 200px;
+    border-radius: 50%;
 }

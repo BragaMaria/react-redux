@@ -1,6 +1,6 @@
 import "./App.css";
 import {NavBar} from "./components/Nav/NavBar.js";
-import {BrowserRouter, HashRouter, Route, Routes} from "react-router-dom";
+import { HashRouter, Route, Routes} from "react-router-dom";
 import {News} from "./components/News/News";
 import {Music} from "./components/Music/Music";
 import {Settings} from "./components/Settings/Settings";
@@ -10,10 +10,11 @@ import React, {lazy} from "react";
 import {Provider} from "react-redux";
 import store from "./redux/redux-store";
 import {Preloader} from "./components/common/Preloader/Preloader";
+import ProfileContainer from "./components/Profile/ProfileContainer";
 
 const DialogsContainer = lazy(() => import('./components/Dialogs/DialogsContainer'))
 const UsersContainer = lazy(() => import('./components/Users/UsersContainer.js'))
-const ProfileContainer = lazy(() => import('./components/Profile/ProfileContainer'))
+//const ProfileContainer = lazy(() => import('./components/Profile/ProfileContainer'))
 const Login = lazy(() => import('./components/Login/Login'))
 
 

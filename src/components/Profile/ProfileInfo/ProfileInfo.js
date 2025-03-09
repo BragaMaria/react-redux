@@ -1,20 +1,29 @@
 import classes from './ProfileInfo.module.css'
 import {Preloader} from "../../common/Preloader/Preloader";
 import {ProfileStatusWithHooks} from "./ProfileStatusWithHooks";
+import userImg from "../../../assets/images/user.jpg";
 
-export const ProfileInfo = ({profile,status,updateStatus,...props}) => {
+export const ProfileInfo = ({profile,status,updateStatus,owner,savePhoto,...props}) => {
   if(!profile){
     return <Preloader/>
   }
+
+  const onMainPhotoSelected = (e)=>{
+    if (e.target.files.length){
+      savePhoto(e.target.files[0])
+    }
+  }
+
+
   return (
     <div>
     <div className={classes.pict}>
-      <img src="https://html.crumina.net/html-olympus/img/top-header1.webp" alt='img'/>
+      <img src={profile.photos.large || userImg} alt='Img isn`t load' className={classes.pictImg}/>
+      {owner==='31789' && <input  type='file' onChange={onMainPhotoSelected}/>}
     </div>
 
       <div className={classes.descBlock}>
-        Name:{profile.fullName}
-
+        Имя: {profile.fullName}
         <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
       </div>
     </div>
