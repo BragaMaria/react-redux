@@ -14,8 +14,6 @@ export const TextArea = ({input, meta: {touched, error}, ...props}) => {
 
 export const Input = ({input, meta: {touched, error}, ...props}) => {
   const isError = touched && error
-
-
   return (
     <div className={`${classes.formControl} ${isError ? classes.error : ""}`}>
       <input  {...input} {...props}/>
