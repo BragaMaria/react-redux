@@ -1,6 +1,6 @@
 import "./App.css";
 import {NavBar} from "./components/Nav/NavBar.js";
-import { HashRouter, Route, Routes} from "react-router-dom";
+import { HashRouter, Navigate, Route, Routes} from "react-router-dom";
 import {News} from "./components/News/News";
 import {Music} from "./components/Music/Music";
 import {Settings} from "./components/Settings/Settings";
@@ -34,6 +34,7 @@ export const App = () => {
             <Route path='/music' element={<Music/>}/>
             <Route path='/settings' element={<Settings/>}/>
             <Route path='/login' element={<Login/>}/>
+            <Route path='/' element={<Navigate to="/profile" />}/>
           </Routes>
         </div>
       </React.Suspense>
