@@ -1,35 +1,27 @@
 {
   "files": {
-    "main.css": "/react-redux/static/css/main.eb6d8b15.css",
-    "main.js": "/react-redux/static/js/main.ef4b685b.js",
+    "main.css": "/react-redux/static/css/main.96358fad.css",
+    "main.js": "/react-redux/static/js/main.e8cc5bc5.js",
     "static/js/453.68693753.chunk.js": "/react-redux/static/js/453.68693753.chunk.js",
-    "static/css/819.ea26c885.chunk.css": "/react-redux/static/css/819.ea26c885.chunk.css",
-    "static/js/819.9fa3ef60.chunk.js": "/react-redux/static/js/819.9fa3ef60.chunk.js",
-    "static/css/232.1ac3f7b9.chunk.css": "/react-redux/static/css/232.1ac3f7b9.chunk.css",
-    "static/js/232.9b185ff8.chunk.js": "/react-redux/static/js/232.9b185ff8.chunk.js",
-    "static/css/287.1924247a.chunk.css": "/react-redux/static/css/287.1924247a.chunk.css",
-    "static/js/287.bfcfa3f1.chunk.js": "/react-redux/static/js/287.bfcfa3f1.chunk.js",
-    "static/css/634.74477b66.chunk.css": "/react-redux/static/css/634.74477b66.chunk.css",
-    "static/js/634.dbb6b692.chunk.js": "/react-redux/static/js/634.dbb6b692.chunk.js",
-    "static/js/200.fd2be898.chunk.js": "/react-redux/static/js/200.fd2be898.chunk.js",
+    "static/css/200.2316a4d6.chunk.css": "/react-redux/static/css/200.2316a4d6.chunk.css",
+    "static/js/200.3e9f9abe.chunk.js": "/react-redux/static/js/200.3e9f9abe.chunk.js",
+    "static/css/681.a40c8c06.chunk.css": "/react-redux/static/css/681.a40c8c06.chunk.css",
+    "static/js/681.d19d01c1.chunk.js": "/react-redux/static/js/681.d19d01c1.chunk.js",
+    "static/js/634.434c599a.chunk.js": "/react-redux/static/js/634.434c599a.chunk.js",
     "static/media/user.jpg": "/react-redux/static/media/user.f6d08895fddddc637379.jpg",
     "static/media/preloader.svg": "/react-redux/static/media/preloader.cac5b4ea9b2a74d85c77eb7ecb6b83ac.svg",
     "index.html": "/react-redux/index.html",
-    "main.eb6d8b15.css.map": "/react-redux/static/css/main.eb6d8b15.css.map",
-    "main.ef4b685b.js.map": "/react-redux/static/js/main.ef4b685b.js.map",
+    "main.96358fad.css.map": "/react-redux/static/css/main.96358fad.css.map",
+    "main.e8cc5bc5.js.map": "/react-redux/static/js/main.e8cc5bc5.js.map",
     "453.68693753.chunk.js.map": "/react-redux/static/js/453.68693753.chunk.js.map",
-    "819.ea26c885.chunk.css.map": "/react-redux/static/css/819.ea26c885.chunk.css.map",
-    "819.9fa3ef60.chunk.js.map": "/react-redux/static/js/819.9fa3ef60.chunk.js.map",
-    "232.1ac3f7b9.chunk.css.map": "/react-redux/static/css/232.1ac3f7b9.chunk.css.map",
-    "232.9b185ff8.chunk.js.map": "/react-redux/static/js/232.9b185ff8.chunk.js.map",
-    "287.1924247a.chunk.css.map": "/react-redux/static/css/287.1924247a.chunk.css.map",
-    "287.bfcfa3f1.chunk.js.map": "/react-redux/static/js/287.bfcfa3f1.chunk.js.map",
-    "634.74477b66.chunk.css.map": "/react-redux/static/css/634.74477b66.chunk.css.map",
-    "634.dbb6b692.chunk.js.map": "/react-redux/static/js/634.dbb6b692.chunk.js.map",
-    "200.fd2be898.chunk.js.map": "/react-redux/static/js/200.fd2be898.chunk.js.map"
+    "200.2316a4d6.chunk.css.map": "/react-redux/static/css/200.2316a4d6.chunk.css.map",
+    "200.3e9f9abe.chunk.js.map": "/react-redux/static/js/200.3e9f9abe.chunk.js.map",
+    "681.a40c8c06.chunk.css.map": "/react-redux/static/css/681.a40c8c06.chunk.css.map",
+    "681.d19d01c1.chunk.js.map": "/react-redux/static/js/681.d19d01c1.chunk.js.map",
+    "634.434c599a.chunk.js.map": "/react-redux/static/js/634.434c599a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.eb6d8b15.css",
-    "static/js/main.ef4b685b.js"
+    "static/css/main.96358fad.css",
+    "static/js/main.e8cc5bc5.js"
   ]
 }
