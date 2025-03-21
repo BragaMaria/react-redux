@@ -20,8 +20,8 @@ let Paginator = ({totalUsersCount, pageSize, currentPage, onPageChanged,portionS
     {portionNumber>1 &&
     <button onClick={()=>{setPortionNumber(portionNumber-1)}}>PREV</button>
     }
-    {pages.filter(p=>p>= leftPortionPageNumber &&  p<=rightPortionPageNumber).
-    map(p => <span
+    {pages.filter(p=>p>= leftPortionPageNumber &&  p<=rightPortionPageNumber)
+      .map(p => <span
       className={cn({[classes.selectedPage] : currentPage === p},classes.pageNumber)}
       onClick={() => {
         onPageChanged(p)
